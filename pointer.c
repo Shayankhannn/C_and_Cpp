@@ -18,7 +18,7 @@ int main(void){
 
     printf("sum is at %p ,or %lu , and is %lf\n",
     ptr_to_sum,ptr_to_sum,*ptr_to_sum);
-
+    printf("grades are at %lu to %lu\n", grades,grades+5);
 
 
     
