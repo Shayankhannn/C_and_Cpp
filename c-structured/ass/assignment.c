@@ -12,6 +12,7 @@ Write a struct that has a member that is the name of a business department:
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 
 // enum for departments 
  enum departments {
@@ -63,27 +64,60 @@ int salary_generator(enum departments d)
 
 }
 
-void print_employee(employee staff[],int how_many  )
+// converting enum int value to its text 
+
+char *department_name(enum departments d)
+{
+    switch (d)
+    {
+    case HR :
+        return "Hr";
+    
+    case SALES :
+        return "Sales";
+    
+    case RESEARCH :
+        return "Research";
+    
+    case SOFTWARE :
+        return "Software";
+    
+    default:
+    return "Executive";
+    }
+}
+
+
+// for printing employees
+void print_employees(employee staff[],int how_many  )
 {
 
     printf("the employee are listed below with their values\n");
 
     for (int i = 0; i < how_many; i++)
     {
-        printf("");
+        printf("department %s,\t salary %d,\t ssn %u\t\n", department_name(staff[i].dept),staff[i].salary,staff[i].ssn);
     }
     
 
 }
 
- 
-int main(){
-    employee staff[10];
-    for (int i = 0; i < 10; i++)
+void generate_employees(employee staff[], int size)
+{
+for (int i = 0; i < size; i++)
     {
         staff[i].dept = rand() % 5 ;
         staff[i].ssn = social_security_generator();
-        staff[i].salary = salary_generator(enum departments);
+        staff[i].salary = salary_generator( staff[i].dept);
+
     }
+}
+ #define SIZE 10
+int main(){
+    employee staff[SIZE];
+    srand(time(NULL));
+    generate_employees(staff,SIZE);
+
+    print_employees(staff,SIZE);
     
 }
