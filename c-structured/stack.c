@@ -1,4 +1,6 @@
 // using stack to revierse a string
+// struct -- a custom data type
+// struct is a container holding related variables
 
 #include <stdio.h>
 #include <ctype.h>
@@ -25,3 +27,27 @@ char top (const stack *stk){return (stk->s[stk->top]);}
 
 int  is_empty (const stack *stk){return (stk-> top == EMPTY);}
 int  is_full (const stack *stk){return (stk-> top == FULL);}
+
+
+int main(){
+stack stack_of_char;
+char *str = "i am otto am i";
+char str_back[20];
+int i =0;
+reset(&stack_of_char);
+printf("original is : %s\n",str);
+while (str[i] != '\0')
+{
+    printf("%c\n",str[i]);
+    push(str[i++],&stack_of_char);
+}
+i=0;
+while (!is_empty(&stack_of_char) && i<20)
+str_back[i++] = pop(&stack_of_char);
+printf("reverse is : %s\n",str_back);
+printf("\n\n");
+
+return 0;
+
+
+}
