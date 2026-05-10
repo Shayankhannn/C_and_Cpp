@@ -31,13 +31,59 @@ typedef struct employee
 }employee ;
 
 unsigned social_security_generator(void){
-    return 1000000000 + rand() % 9000000000;
+    return 100000000 + rand() % 900000000; // 9000000000 controls how wide the SSN variation is,
 }
 
+int salary_generator(enum departments d)
+{
+    int base ;
 
+    switch (d)
+    {
+    case HR:
+        base = 50000;
+        break;
+    case SALES:
+        base = 60000;
+        break;
+    case RESEARCH:
+        base = 70000;
+        break;
+    case SOFTWARE:
+        base = 90000;
+        break;
+        
+        default:
+        base = 120000;
 
+        break;
+    }
+
+    return base + rand() % 10000; // 10000 controls how wide the salary variation is
+
+}
+
+void print_employee(employee staff[],int how_many  )
+{
+
+    printf("the employee are listed below with their values\n");
+
+    for (int i = 0; i < how_many; i++)
+    {
+        printf("");
+    }
+    
+
+}
 
  
 int main(){
-
+    employee staff[10];
+    for (int i = 0; i < 10; i++)
+    {
+        staff[i].dept = rand() % 5 ;
+        staff[i].ssn = social_security_generator();
+        staff[i].salary = salary_generator(enum departments);
+    }
+    
 }
