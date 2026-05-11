@@ -10,6 +10,12 @@ Write a struct that has a member that is the name of a business department:
      Print out the 10 employees and their values to the screen-one line at a time.
 */
 
+// This program uses structs and enums to generate and display employee information. Each employee has a department, salary, and social security number. Salaries are generated based on department with random offsets.
+
+
+// got perfect score
+
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
