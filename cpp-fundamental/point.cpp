@@ -23,3 +23,10 @@ class point {
 }
 
 // this is all just operator overlaoding and class c++ doesnt know how to compute custom class so he just compute based on what you provide so we create custom + and cout 
+
+
+// Thing	Meaning
+// a.setx(5)	put value into object
+// a.getx()	retrieve value
+// operator+	teach custom addition
+// operator<<	teach custom printing
