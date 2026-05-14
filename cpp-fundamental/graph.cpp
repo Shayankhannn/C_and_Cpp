@@ -9,6 +9,22 @@ double prob(){
     return (double) rand()/RAND_MAX;
 }
 
+bool is_connected(bool *graph[],int size)
+{
+    int old_size = 0;
+    int c_size = 0;
+    bool* close = new bool[size];
+    bool* open = new bool[size];
+
+    for (int i = 0; i < size; i++)
+    {
+        open[i]=close[i]= false;
+        
+    }
+    open[0]= true;
+    
+
+}
 int main()
 {
     // vector<pair int,int>graph[5];
@@ -37,6 +53,7 @@ int main()
         
     }
     
+
     
 
 
