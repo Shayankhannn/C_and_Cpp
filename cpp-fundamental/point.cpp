@@ -30,3 +30,6 @@ class point {
 // a.getx()	retrieve value
 // operator+	teach custom addition
 // operator<<	teach custom printing
+
+
+point (double x=0.0,y=0.0):x(x),y(y){}
